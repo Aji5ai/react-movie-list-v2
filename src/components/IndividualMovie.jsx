@@ -1,20 +1,19 @@
 import "./IndividualMovie.css";
-import movieList from "./movieList.js";
 
 export default function IndividualMovie(props) {
-  const {movieIndex} = props;
-  const movie = movieList[movieIndex];
+  const {poster, title, releaseYear, duration, actors, director, description, rating} = props;
+  // Au lieu de récupérer l'index on prend direct les clés de chaque valeur de la liste de films (tableau) pour les mettre en props. ça remplacerait un movieList[movieIndex].poster par ex (où const {movieIndex} = props;)
 
   return (
     <div className="individualMovie_container">
-      <img src={movie.poster} alt={`Affiche du film ${movie.title}`} />
-      <h2>{movie.title}</h2>
-      <h3>Année : {movie.releaseYear}</h3>
-      <p>Durée : {movie.duration} minutes</p>
-      <p>Acteurs : {movie.actors.join(", ")}</p>
-      <p>Directeur : {movie.director}</p>
-      <p>Résumé : {movie.description}</p>
-      <p>Note : {movie.rating}/10</p>
+      <img src={poster} alt={`Affiche du film ${title}`} />
+      <h2>{title}</h2>
+      <h3>Année : {releaseYear}</h3>
+      <p>Durée : {duration} minutes</p>
+      <p>Acteurs : {actors.join(", ")}</p>
+      <p>Directeur : {director}</p>
+      <p>Résumé : {description}</p>
+      <p>Note : {rating}/10</p>
     </div>
   );
 }
