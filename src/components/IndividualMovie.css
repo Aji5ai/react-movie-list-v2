@@ -1,0 +1,8 @@
+.individualMovie_container {
+  background-color: #a0eec8;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px 3px #595859;
+  text-align: center;
+  margin-top: 2rem;
+}
